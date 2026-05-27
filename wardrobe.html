@@ -1,69 +1,47 @@
-# Wishlist Wardrobe & Dream Gallery
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digi Closet | Wishlist Wardrobe</title>
+    <title>Digi Closet - Wishlist Wardrobe</title>
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/format.css">
     <link rel="stylesheet" href="styles/effects.css">
 </head>
 <body>
-
-    <header class="site-header">
-        <div class="header-container">
-            <h1 class="logo">Digi Closet</h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="wardrobe.html" class="current">Wardrobe</a></li>
-                    <li><a href="generator.html">Generator</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>Digi Closet</h1>
+        <p class="subtitle">Your Digital Style Space</p>
     </header>
 
-    <main class="gallery-container">
-        <header class="section-title">
-            <h2>Wishlist Wardrobe &amp; Dream Gallery</h2>
-            <p>Track your dream pieces, monitor trends, and calculate costs dynamically.</p>
-        </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="wardrobe.html" class="active">Wardrobe</a>
+        <a href="generator.html">Outfit Builder</a>
+        <a href="about.html">About</a>
+    </nav>
 
-        <section class="wardrobe-grid">
-            <article class="wishlist-card">
-                <div class="item-preview">👚</div>
-                <div class="item-meta">
-                    <h3>Pastel Ribbon Knit Top</h3>
-                    <p class="cost-tag">$45.00</p>
-                    <p class="notes">Pairs perfectly with low-rise baggy denim.</p>
-                </div>
-            </article>
+    <div class="container">
+        <div class="card">
+            <h2>Wishlist Wardrobe Tracker</h2>
+            <p>Your ultimate "dream" gallery for items you wish to buy, featuring integrated notes for tracking costs.</p>
+            
+            <form class="wishlist-form" onsubmit="addWishlistItem(event)">
+                <input type="text" id="item-name" placeholder="Item Name" required>
+                <input type="number" id="item-cost" placeholder="Estimated Cost ($)" required min="0" step="0.01">
+                <input type="text" id="item-notes" placeholder="Notes (Store, Link, Size)">
+                <button type="submit">Add to Wishlist</button>
+            </form>
 
-            <article class="wishlist-card">
-                <div class="item-preview">👖</div>
-                <div class="item-meta">
-                    <h3>Classic Blue Flare Pants</h3>
-                    <p class="cost-tag">$68.00</p>
-                    <p class="notes">Check local trend shops or online coupons first.</p>
-                </div>
-            </article>
+            <div class="wishlist-grid" id="wishlist-display"></div>
 
-            <article class="wishlist-card">
-                <div class="item-preview">👟</div>
-                <div class="item-meta">
-                    <h3>Platform Retro Sneakers</h3>
-                    <p class="cost-tag">$90.00</p>
-                    <p class="notes">Save up for winter birthday drops.</p>
-                </div>
-            </article>
-        </section>
-    </main>
+            <div class="stats-banner">
+                <div class="stat-box">Total Wishlist Items: <span id="total-items">0</span></div>
+                <div class="stat-box">Projected Budget Need: $<span id="total-budget">0.00</span></div>
+            </div>
+        </div>
+    </div>
 
-    <footer class="site-footer">
-        <p>&copy; 2026 Digi Closet. Designed by Calista Labuguen. All Rights Reserved.</p>
-    </footer>
-
+    <script src="javascript/app.js"></script>
 </body>
 </html>

@@ -3,114 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digi Closet</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Digi Closet - Home</title>
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/format.css">
+    <link rel="stylesheet" href="styles/effects.css">
 </head>
 <body>
-
     <header>
         <h1>Digi Closet</h1>
         <p class="subtitle">Your Digital Style Space</p>
     </header>
 
     <nav>
-        <a href="#home" class="nav-link active" onclick="switchView('home')">Home</a>
-        <a href="#generator" class="nav-link" onclick="switchView('generator')">Outfit Builder</a>
-        <a href="#wishlist" class="nav-link" onclick="switchView('wishlist')">Wishlist</a>
-        <a href="#about" class="nav-link" onclick="switchView('about')">About</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="wardrobe.html">Wardrobe</a>
+        <a href="generator.html">Outfit Builder</a>
+        <a href="about.html">About</a>
     </nav>
 
     <div class="container">
-
-        <section id="home" class="view-section active-view">
-            <div class="card">
-                <h2>Welcome to Your Digital Wardrobe</h2>
-                <p><strong>Digi Closet</strong> is designed to help you curate your personal fashion collection dynamically. Say goodbye to stressful, busy mornings and hello to seamless, intentional styling.</p>
-                <p>Use our tools to build daily outfit mockups, log items you currently own via camera photos, or map out your financial style targets in your Dream Wishlist.</p>
-            </div>
-            <div class="card">
-                <h2>Trending Highlights</h2>
-                <p>✨ Minimalist Capsule Wardrobes are taking over. Try organizing your workspace with 3 core neutrals.</p>
-                <p>✨ Pastel coordination matches perfectly with your custom color palette choices!</p>
-            </div>
-        </section>
-
-        <section id="generator" class="view-section">
-            <div class="card">
-                <h2>Outfit Builder & Digital Closet Workspace</h2>
-                <p>Upload files or snap images from your mobile device camera to drop them right into your dressing view grid.</p>
-                
-                <div class="builder-workspace">
-                    <div class="upload-panel">
-                        <p>Capture or Select Clothing Image</p>
-                        <label class="custom-file-upload">
-                            <input type="file" id="clothing-upload" accept="image/*" onchange="handleImageUpload(event)">
-                            📷 Upload / Take Photo
-                        </label>
-                        <p class="upload-hint">Supports PNG, JPG, or Live Camera Capture</p>
-                    </div>
-
-                    <div>
-                        <h3>Current Outfit Grid Canvas</h3>
-                        <div class="canvas-area" id="closet-canvas">
-                            <div class="clothing-item placeholder">
-                                <div class="placeholder-text">👚<br>Sample Top</div>
-                            </div>
-                            <div class="clothing-item placeholder">
-                                <div class="placeholder-text">👖<br>Sample Pants</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="wishlist" class="view-section">
-            <div class="card">
-                <h2>Wishlist Wardrobe Tracker</h2>
-                <p>Plan ahead for future style additions. Add target clothing items, monitor costs, and store direct links or outfit thoughts.</p>
-                
-                <form class="wishlist-form" onsubmit="addWishlistItem(event)">
-                    <input type="text" id="item-name" placeholder="Item Name (e.g. Leather Jacket)" required>
-                    <input type="number" id="item-cost" placeholder="Estimated Cost ($)" required min="0" step="0.01">
-                    <input type="text" id="item-notes" placeholder="Notes (Brand, Store, URL, etc.)">
-                    <button type="submit">Add to Wishlist</button>
-                </form>
-
-                <div class="wishlist-grid" id="wishlist-display">
-                    </div>
-
-                <div class="stats-banner">
-                    <div class="stat-box">Total Wishlist Items: <span id="total-items">0</span></div>
-                    <div class="stat-box">Projected Budget Need: $<span id="total-budget">0.00</span></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="view-section">
-            <div class="card">
-                <h2>Project Information</h2>
-                <table class="about-table">
-                    <tr>
-                        <td class="table-label">Developer:</td>
-                        <td>Calista Labuguen</td>
-                    </tr>
-                    <tr>
-                        <td class="table-label">App Vision:</td>
-                        <td>To give young creators and busy style enthusiasts total organizational control over fashion options via rapid camera workflows.</td>
-                    </tr>
-                    <tr>
-                        <td class="table-label">Requirements:</td>
-                        <td>Stable Web Internet connection and camera-enabled smartphone layouts for optimal performance.</td>
-                    </tr>
-                </table>
-                <h3>App Version Notes</h3>
-                <p>v1.0.0 — Functional responsive dynamic view prototype setup with localized state holding capability.</p>
-            </div>
-        </section>
-
+        <div class="card">
+            <h2>Welcome to Your Digital Wardrobe</h2>
+            <p><strong>Digi Closet</strong> helps you organize your personal fashion collection digitally. Created to save valuable time on busy mornings and let you experiment with creative trends easily.</p>
+        </div>
+        <div class="card">
+            <h2>Trending Highlights</h2>
+            <p>✨ Minimalist Pastel coordination matches perfectly with your design layout accents today!</p>
+        </div>
     </div>
-
-    <script src="js/app.js"></script>
 </body>
 </html>
