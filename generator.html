@@ -46,11 +46,12 @@
                     </select>
                 </div>
 
-                <div class="input-block">
-                    <label class="custom-file-upload">
-                        <input type="file" id="clothingPhoto" accept="image/*" required>
-                        📸 Select/Take Clothing Photo
-                    </label>
+                <div class="upload-container">
+                 <input type="file" id="clothing-upload" accept="image/*" style="display: none;">
+    
+                 <label for="clothing-upload" class="upload-btn" style="cursor: pointer; display: inline-block;">
+                    📸 Select/Take Clothing Photo
+                 </label>
                 </div>
 
                 <button type="submit" class="btn btn-submit">Insert Into Virtual Closet</button>
