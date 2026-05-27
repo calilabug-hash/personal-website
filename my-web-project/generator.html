@@ -1,0 +1,74 @@
+# Outfit Builder (Interactive Page)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digi Closet | Outfit Generator</title>
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/format.css">
+    <link rel="stylesheet" href="styles/effects.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="logo">Digi Closet</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="wardrobe.html">Wardrobe</a></li>
+                    <li><a href="generator.html" class="current">Generator</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="generator-container">
+        <h2>Interactive Outfit Builder</h2>
+        <p class="limiter-warning">⚠️ Note: For best experience, use a mobile device with a camera to snap and insert clothes.</p>
+
+        <section class="builder-workspace">
+            <form id="outfitUploadForm" class="upload-form">
+                <div class="input-block">
+                    <label for="clothingItemName">Apparel Item Name</label>
+                    <input type="text" id="clothingItemName" placeholder="e.g., Cropped Sports Jacket" required>
+                </div>
+
+                <div class="input-block">
+                    <label for="categorySelect">Category Slot</label>
+                    <select id="categorySelect">
+                        <option value="tops">Tops / Layering</option>
+                        <option value="bottoms">Bottoms / Denim</option>
+                        <option value="outerwear">Outerwear</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+
+                <div class="input-block">
+                    <label class="custom-file-upload">
+                        <input type="file" id="clothingPhoto" accept="image/*" required>
+                        📸 Select/Take Clothing Photo
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Insert Into Virtual Closet</button>
+            </form>
+
+            <div id="livePreviewContainer" class="preview-box">
+                <h3>Workspace Canvas Preview</h3>
+                <div id="imagePlaceholder" class="canvas-placeholder">No photo uploaded yet.</div>
+                <img id="outputCanvasImage" src="#" alt="User Upload Preview" class="hidden">
+                <h4 id="outputItemTitle"></h4>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Digi Closet. Designed by Calista Labuguen. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

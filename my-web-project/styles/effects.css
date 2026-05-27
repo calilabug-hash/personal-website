@@ -1,0 +1,60 @@
+/* Navigation Hover Effects Specification mapping */
+.main-nav a {
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--rose-brand) !important; /* Forces Rose state change on link hover */
+}
+
+/* Interface Element Microinteractions Click triggers */
+.btn {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+}
+
+.btn:hover {
+    filter: brightness(1.05);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Wishlist Layout Interaction Blocks Hover Scale */
+.wishlist-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wishlist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus Elements Form States Indicator Rings */
+.input-block input:focus, .input-block select:focus {
+    outline: none;
+    border-color: var(--rose-brand);
+    box-shadow: 0 0 0 3px rgba(248, 151, 191, 0.3);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Dynamic Live Injection UI Transitions Animations */
+#outputCanvasImage {
+    animation: fadeInScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,204 @@
+/* Core Global Structure Overrides */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Height Rules explicitly set to 200px */
+.site-header {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1100px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Viewport Containers Layout Setup */
+.hero-section, .gallery-container, .generator-container, .about-container {
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text, .hero-graphic {
+    flex: 1;
+}
+
+.fashion-sketch-placeholder {
+    width: 100%;
+    max-width: 380px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+/* Wardrobe Dream Gallery Grid Framework */
+.wardrobe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.wishlist-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.item-preview {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.item-meta {
+    padding: 20px;
+}
+
+/* Interactive Generator Split Screen Frame Layout */
+.builder-workspace {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.upload-form, .preview-box {
+    flex: 1;
+    min-width: 300px;
+}
+
+.input-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-block label {
+    margin-bottom: 8px;
+}
+
+.input-block input, .input-block select {
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.custom-file-upload {
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+.preview-box {
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.canvas-placeholder {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#outputCanvasImage {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* About Layout Sheet */
+.about-card {
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.divider {
+    margin: 30px 0;
+    border: none;
+    height: 1px;
+}
+
+/* Grounded Footer Configuration */
+.site-footer {
+    text-align: center;
+    padding: 25px;
+    width: 100%;
+    margin-top: auto;
+}
+
+/* Mobile Support Responsive Media Query Viewport Overrides */
+@media (max-width: 768px) {
+    .site-header {
+        height: auto;
+        padding: 20px 0;
+    }
+    .header-container {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .builder-workspace {
+        flex-direction: column;
+    }
+}
