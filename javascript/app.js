@@ -1,24 +1,4 @@
-// Navigation Router Controller 
-function switchView(viewId) {
-    // Hide all view panels
-    const sections = document.querySelectorAll('.view-section');
-    sections.forEach(section => section.classList.remove('active-view'));
-    
-    // Show requested view panel
-    const targetSection = document.getElementById(viewId);
-    if(targetSection) targetSection.classList.add('active-view');
-
-    // Toggle Highlight indicator links on navigation bars
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if(link.getAttribute('href') === `#${viewId}`) {
-            link.classList.add('active');
-        }
-    });
-}
-
-// Outfit Builder / Photo Upload Logic
+// Outfit Builder Camera and Upload Processing
 function handleImageUpload(event) {
     const file = event.target.files[0];
     if (!file) return;
@@ -26,14 +6,13 @@ function handleImageUpload(event) {
     const reader = new FileReader();
     reader.onload = function(e) {
         const canvas = document.getElementById('closet-canvas');
+        if (!canvas) return;
         
-        // Construct fresh wardrobe canvas component element
         const itemDiv = document.createElement('div');
         itemDiv.className = 'clothing-item';
         
         const img = document.createElement('img');
         img.src = e.target.result;
-        img.alt = "User Wardrobe Upload";
 
         const deleteBtn = document.createElement('button');
         deleteBtn.className = 'delete-btn';
@@ -47,7 +26,7 @@ function handleImageUpload(event) {
     reader.readAsDataURL(file);
 }
 
-// Wishlist State Tracker
+// Wishlist Logic and State Controller
 let wishlistItems = [];
 
 function addWishlistItem(event) {
@@ -57,17 +36,18 @@ function addWishlistItem(event) {
     const costInput = document.getElementById('item-cost');
     const notesInput = document.getElementById('item-notes');
 
+    if(!nameInput || !costInput) return;
+
     const item = {
         id: Date.now(),
         name: nameInput.value,
         cost: parseFloat(costInput.value),
-        notes: notesInput.value || "No extra notes details added."
+        notes: notesInput.value || "No notes added."
     };
 
     wishlistItems.push(item);
     renderWishlist();
 
-    // Clear Input Form Elements
     nameInput.value = '';
     costInput.value = '';
     notesInput.value = '';
@@ -80,27 +60,34 @@ function removeWishlistItem(id) {
 
 function renderWishlist() {
     const display = document.getElementById('wishlist-display');
-    display.innerHTML = '';
+    if(!display) return;
     
+    display.innerHTML = '';
     let accumulatedCost = 0;
 
     wishlistItems.forEach(item => {
         accumulatedCost += item.cost;
 
         const card = document.createElement('div');
-        card.className = 'wishlist-card';
+        card.style.background = "white";
+        card.style.border = "1px solid #D1D9E6";
+        card.style.borderRadius = "8px";
+        card.style.padding = "15px";
+        card.style.display = "flex";
+        card.style.flexDirection = "column";
+        card.style.justify = "space-between";
+        
         card.innerHTML = `
             <div>
                 <h4 style="font-weight:bold; margin-bottom:5px;">${item.name}</h4>
-                <p class="wishlist-cost">$${item.cost.toFixed(2)}</p>
-                <p class="wishlist-notes">${item.notes}</p>
+                <p style="font-weight:bold; color:#F897BF; margin:5px 0;">$${item.cost.toFixed(2)}</p>
+                <p style="font-size:0.9rem; color:#666; background:#f9f9f9; padding:5px; border-radius:4px;">${item.notes}</p>
             </div>
             <button onclick="removeWishlistItem(${item.id})" style="margin-top:10px; background:#ef4444; color:white; border:none; padding:5px; border-radius:4px; cursor:pointer; font-size:0.8rem;">Remove</button>
         `;
         display.appendChild(card);
     });
 
-    // Update Budget Summarization Metrics on View UI
     document.getElementById('total-items').innerText = wishlistItems.length;
     document.getElementById('total-budget').innerText = accumulatedCost.toFixed(2);
 }
