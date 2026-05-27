@@ -91,4 +91,6 @@ function loadSavedImages() {
  */
 function removeImageFromStorage(imageSrc) {
     let currentImages = JSON.parse(localStorage.getItem('digiClosetImages')) || [];
+    currentImages = currentImages.filter(img => img !== imageSrc);
+    localStorage.setItem('digiClosetImages', JSON.stringify(currentImages));
 }
