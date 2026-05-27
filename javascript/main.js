@@ -37,3 +37,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Get references to our HTML elements
+const fileInput = document.getElementById('clothing-upload');
+const canvasPreview = document.getElementById('canvas-preview');
+const placeholderText = document.getElementById('placeholder-text');
+
+// Listen for when a user selects a file
+fileInput.addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Get the selected file
+
+    if (file) {
+        const reader = new FileReader();
+
+        // When the file is done reading, create an image element
+        reader.onload = function(e) {
+            // Remove the placeholder text if it exists
+            if (placeholderText) {
+                placeholderText.style.display = 'none';
+            }
+
+            // Check if an image is already there, remove it to update with the new one
+            const existingImg = canvasPreview.querySelector('img');
+            if (existingImg) {
+                existingImg.remove();
+            }
+
+            // Create and style the new image element
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.maxWidth = '100%';
+            img.style.maxHeight = '100%';
+            img.style.borderRadius = '8px';
+
+            // Drop the image right into the canvas preview container
+            canvasPreview.appendChild(img);
+        };
+
+        // Read the image file as a data URL
+        reader.readAsDataURL(file);
+    }
+});
