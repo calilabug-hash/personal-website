@@ -84,3 +84,17 @@ nav {
     nav a { font-size: 0.85rem; padding: 6px 10px; }
     .stats-banner { grid-template-columns: 1fr; }
 }
+/* Inspiration Flexbox Layout */
+.inspiration-grid {
+    display: flex;          /* Activates Flexbox, turning the column into a row */
+    flex-direction: row;    /* Explicitly aligns child items side-by-side */
+    gap: 20px;              /* Creates an even, clean space between each image card */
+    justify-content: space-between; /* Evenly distributes the cards across the full container width */
+    flex-wrap: wrap;        /* Crucial: lets items wrap to the next line on mobile screens so they don't squish */
+}
+
+/* Make sure each card container has room to grow evenly */
+.look-card {
+    flex: 1;                /* Forces all three cards to be the exact same width */
+    min-width: 250px;       /* Prevents cards from getting too tiny on small laptops */
+}
