@@ -98,3 +98,47 @@ nav {
     flex: 1;                /* Forces all three cards to be the exact same width */
     min-width: 250px;       /* Prevents cards from getting too tiny on small laptops */
 }
+.site-footer {
+    background-color: #222; /* Dark background */
+    color: #fff;            /* White text */
+    padding: 20px 0;
+    margin-top: auto;       /* Back-up push for the bottom */
+    font-family: sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap; /* Wraps items cleanly on mobile screens */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff; /* Highlights link on hover */
+}
+
+/* Responsive adjustment for mobile */
+@media screen and (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
