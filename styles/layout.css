@@ -12,11 +12,10 @@ body {
     background-color: #fcf8fa;
     color: #2D2D2D;
     line-height: 1.6;
-    
-    /* Flexbox layout to lock footer at the absolute bottom */
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
+    margin: 0;
 }
 
 .container {
