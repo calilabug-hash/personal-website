@@ -91,13 +91,7 @@ nav {
 /* ==========================================================================
    4. INSPIRATION SECTION (SIDE-BY-SIDE GRID & RESPONSIVE IMAGES)
    ========================================================================== */
-To stop the images from cropping, you need to change the object-fit property inside your .look-card img CSS selector.
-
-Right now, it is set to cover, which forces the image to fill the entire 350px height by slicing off the sides or top/bottom of your outfits. Changing it to contain will force the entire clothing item to scale down and fit perfectly inside the box without a single pixel getting cut off.
-
-Here is exactly how to update your code:
-
-CSS
+   
 .inspiration-grid {
     display: flex;
     flex-direction: row;
